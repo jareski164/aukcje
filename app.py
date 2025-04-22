@@ -33,5 +33,8 @@ if url:
     st.subheader("📄 Wyniki analizy")
     st.write(f"**Tytuł:** {data['Tytuł']}")
     st.write(f"**Lokalizacja:** {data['Lokalizacja']}")
-    st.image(data["Zdjęcie"], width=300)
+    if data["Zdjęcie"]:
+        st.image(data["Zdjęcie"], width=300)
+    else:
+        st.warning("Brak zdjęcia w tej aukcji.")
     st.write(f"[Przejdź do aukcji]({data['Link']})")
